@@ -1,0 +1,30 @@
+                                 expenv
+
+Expenv is an awk script that expands environment variables from a text.
+Expenv evaluates shell expressions (such ${var} or $var), reading from
+a file or stdin.
+
+
+§ Usage
+
+	$ expenv < inputfile > outputfile
+
+
+§ Example input
+
+	My PWD is $PWD
+	Whoami: ${USER}
+	I'm using $TERM
+
+
+§ See also
+
+For a Go and a Shell implementation of expenv, checkout [1] and [2].
+
+[1]: https://github.com/blang/expenv
+[2]: https://github.com/blang/expenv.sh
+
+
+§ License
+
+This software is in public domain and is provided AS IS, with NO WARRANTY.

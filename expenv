@@ -1,0 +1,9 @@
+#!/usr/bin/awk -f
+
+{
+	while (match($0, /\$[A-Za-z_]+/))
+		$0 = substr($0, 1, RSTART - 1) ENVIRON[substr($0, RSTART + 1, RLENGTH - 1)] substr($0, RSTART + RLENGTH)
+	while (match($0, /\$\{[A-Za-z_]+\}/))
+		$0 = substr($0, 1, RSTART - 1) ENVIRON[substr($0, RSTART + 2, RLENGTH - 3)] substr($0, RSTART + RLENGTH)
+	print
+}
